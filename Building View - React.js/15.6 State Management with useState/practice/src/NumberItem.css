@@ -1,0 +1,9 @@
+.NumberItem button {
+    padding: 5px;
+    margin: 5px;
+    width: 50px;
+    background-color: bisque;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

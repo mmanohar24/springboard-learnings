@@ -1,0 +1,25 @@
+.Contact {
+    gap: 12px;
+}
+
+.Contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    box-sizing: border-box;
+}
+
+.Contact-form input {
+    padding: 12px;
+    border: 1px solid purple;
+    border-radius: 5px;
+}
+
+.Contact-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: purple;
+}

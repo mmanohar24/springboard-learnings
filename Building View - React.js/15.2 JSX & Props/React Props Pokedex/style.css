@@ -1,0 +1,43 @@
+/* main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+h3 {
+    font-style: italic;
+    color: cornflowerblue;
+}
+
+.Pokedex {
+    text-align: center;
+
+}
+
+.Pokedex-winner
+{
+    color: green;
+    font-weight: bold;
+}
+
+.Pokedex-loser
+{
+    color: red;
+}
+
+.Pokedex-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.PokeCard {
+    background-color: bisque;
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    border: 2px solid;
+}

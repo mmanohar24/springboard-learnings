@@ -1,0 +1,24 @@
+.Deck h3 {
+    color: white;
+    text-align: center;
+    font-family: cursive;
+}
+
+.Deck button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Deck-buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.Deck-cardImage
+{
+    display: flex;
+    flex-wrap: wrap;
+}

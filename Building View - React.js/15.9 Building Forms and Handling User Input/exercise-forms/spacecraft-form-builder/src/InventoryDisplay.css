@@ -1,0 +1,20 @@
+.InventoryDisplay {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style-type: none;
+    padding: 0px;
+    margin: 20px 0;
+    padding-bottom: 15px;
+
+}
+
+.InventoryDisplay-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: lavender;
+    border-radius: 5px;
+    font-family: cursive;
+}

@@ -1,0 +1,25 @@
+.ItemForm-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.ItemForm-form input {
+    padding: 12px;
+    border: 1px solid purple;
+    border-radius: 5px;
+}
+
+.ItemForm-form input[type="range"] {
+    accent-color: purple
+}
+
+.ItemForm-formBtn {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: purple;
+}

@@ -1,0 +1,25 @@
+.GreatGreatGrandChild {
+    padding: 5px;
+}
+
+.GreatGreatGrandChild-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.GreatGreatGrandChild-incrementBtn {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.GreatGreatGrandChild-decrementBtn {
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}

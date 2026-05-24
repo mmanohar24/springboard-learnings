@@ -1,0 +1,10 @@
+.ColorButtons button {
+    padding: 5px;
+    margin: 5px;
+    width: auto;
+    color: white;
+    background-color: peru;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

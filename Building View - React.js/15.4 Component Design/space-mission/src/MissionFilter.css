@@ -1,0 +1,21 @@
+.MissionFilter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.MissionFilter button
+{
+    background-color: transparent;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-family:'Times New Roman', Times, serif
+}
+
+.MissionFilter button.active
+{
+    background-color:darkorange
+}

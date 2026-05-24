@@ -1,0 +1,29 @@
+.Dice {
+
+    border: 1px solid brown;
+    padding: 5px;
+    justify-content: center;
+    text-align: center;
+    width: 500px;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+/* .Dice h2 {
+    color: chocolate
+} */
+
+.Dice-button {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    padding: 2px;
+    margin: 10px;
+    border: none;
+    background-color: green;
+    color: white;
+}

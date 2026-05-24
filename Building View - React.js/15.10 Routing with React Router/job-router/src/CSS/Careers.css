@@ -1,0 +1,17 @@
+.Careers a {
+    display: block;
+    background: purple;
+    padding: 20px;
+    border-radius: 4px;
+    margin: 20px 0;
+    text-decoration: none;
+}
+
+.Careers p {
+    color: white;
+    margin: 0;
+}
+
+.Careers p:last-child {
+    color: gainsboro;
+}

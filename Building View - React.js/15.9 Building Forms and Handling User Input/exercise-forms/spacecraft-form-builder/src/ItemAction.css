@@ -1,0 +1,8 @@
+.ItemAction-btn {
+    padding: 10px;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: purple;
+}

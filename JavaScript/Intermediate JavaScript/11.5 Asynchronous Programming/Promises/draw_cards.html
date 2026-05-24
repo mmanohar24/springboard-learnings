@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Draw Cards </title>
+        <link rel="stylesheet" href="card.css">
+    </head>
+
+    <body>
+        <h1> Deck of Cards </h1>
+
+        <div>
+            <button id = "drawButton" disabled> Draw Card </button>
+            <button id = "resetButton"> Reset Deck </button>
+            <span id = "status"> Loading Deck... </span>
+        </div>
+
+        <div id = "cards" aria-live = "polite"> </div>
+
+        <script>
+            const API = "https://deckofcardsapi.com/api/deck";
+
+            const drawButton = document.getElementById("drawButton");
+            const resetButton = document.getElementById("resetButton");
+            const statusSpan = document.getElementById("status");
+            const cardsDiv = document.getElementById("cards");
+
+            let deckId = null;
+            let remaining = 0;
+
+            // Function to initialize a new deck
+
+            async function newDeck()
+            {
+                // Prevent drawing while loading.   
+                drawButton.disabled = true;
+                statusSpan.textContent = "Loading Deck...";
+                
+                // Clear old cards from the page. 
+                cardsDiv.innerHTML = "";
+
+                try
+                {
+                    const response = await fetch(`${API}/new/shuffle/?deck_count=1`);
+                    const data = await response.json();
+
+                    if (!data.success)
+                    {
+                        throw new Error("Failed to fetch new deck");
+                    }
+
+                    // Store the deck ID and remaining cards.
+                    deckId = data.deck_id;
+
+                    // At the start, there are 52 cards remaining in a new deck. 
+                    remaining = data.remaining;
+
+                    // Updating the count
+                    statusSpan.textContent = `${remaining} cards remaining`;
+
+                    // Enable the draw button if there are any cards left.
+                    drawButton.disabled = remaining === 0;
+                }
+                catch(error)
+                {
+                    statusSpan.textContent = "Error loading deck. Please try again.";
+                    console.error("Error:", error);
+                }
+            }
+
+            // Function to draw a card from the deck
+
+            async function drawCard()
+            {
+                // Safety check: returns if no deck id is present.
+                if(!deckId) return;
+                drawButton.disabled = true;
+                statusSpan.textContent = "Drawing card...";
+
+                try
+                {
+                    const response = await fetch(`${API}/${deckId}/draw/?count=1`);
+                    const data = await response.json();
+
+                    if(!data.success)
+                    {
+                        throw new Error("Failed to draw card");
+                    }
+
+                    // API tells us how many cards are left in the deck.
+                    remaining = data.remaining;
+
+                    // Display the card we got back from the API.
+                    const card = data.cards[0];
+
+                    // Create an image element for the card.
+                    const img = document.createElement("img");
+                    img.src = card.image;
+                    img.alt = `${card.value} of ${card.suit}`;
+                    img.loading = "lazy";
+
+                    // Show the new card at the top.
+                    cardsDiv.prepend(img);
+
+                    statusSpan.textContent = `${remaining} cards remaining`;
+                    drawButton.disabled = remaining === 0;
+
+                    if(remaining === 0)
+                    {
+                        statusSpan.textContent = "No cards remaining. Please reset the deck."
+                    }
+                }
+                catch(error)
+                {
+                    statusSpan.textContent = "Error drawing card. Please try again.";
+                    console.error("Error:", error);
+                }
+                finally
+                {
+                    if(remaining > 0)
+                    {
+                        drawButton.disabled = false;
+                    }
+                }
+            }
+
+            drawButton.addEventListener("click", drawCard);
+            resetButton.addEventListener("click", newDeck);
+
+            // Initialize a new deck on page load
+            newDeck();
+        </script>
+    </body>
+</html>

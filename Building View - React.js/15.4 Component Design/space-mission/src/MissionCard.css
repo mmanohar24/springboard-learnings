@@ -1,0 +1,13 @@
+.MissionCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid brown;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+.MissionCard-details h3 {
+    margin-top: 0;
+}

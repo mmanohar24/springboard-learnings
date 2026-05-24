@@ -1,0 +1,15 @@
+.HelpLayout-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.HelpLayout-nav a {
+    padding: 10px;
+    color: white;
+    background-color: purple;
+    border-radius: 4px;
+    text-decoration: none;
+}
+

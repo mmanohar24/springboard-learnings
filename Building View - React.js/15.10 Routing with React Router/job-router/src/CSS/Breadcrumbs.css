@@ -1,0 +1,22 @@
+.Breadcrumbs {
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.Breadcrumbs * {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.Breadcrumbs .crumb::after {
+    content: '→';
+    margin-left: 5px;
+}
+
+.Breadcrumbs .crumb:last-child::after {
+    display: none;
+}
+
+.Breadcrumbs .crumb a {
+    color: purple;
+}

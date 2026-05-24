@@ -1,0 +1,34 @@
+body {
+    background-color: #4f7942;
+    color: white;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.BlackjackGame {
+    text-align: center;
+}
+
+.BlackjackGame-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.Card {
+    width: 180px;
+    border-radius: 8px;
+}
+
+.BlackjackGame-score {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.BlackjackGame-blackjack {
+    font-weight: bold;
+}

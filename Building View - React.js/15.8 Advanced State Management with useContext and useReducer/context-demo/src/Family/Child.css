@@ -1,0 +1,11 @@
+.Child {
+    padding: 5px;
+}
+
+.Child-incrementBtn {
+    padding: 10px;
+    color: white;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+}

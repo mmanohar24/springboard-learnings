@@ -1,0 +1,25 @@
+.NewItemForm {
+    gap: 5px;
+}
+
+.NewItemForm-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    box-sizing: border-box;
+}
+
+.NewItemForm-form input {
+    padding: 12px;
+    border: 1px solid purple;
+    border-radius: 5px;
+}
+
+.NewItemForm button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: purple;
+}

@@ -1,0 +1,4 @@
+.Star:focus {
+    filter: drop-shadow(0 5px yellow);
+    outline: none;
+}

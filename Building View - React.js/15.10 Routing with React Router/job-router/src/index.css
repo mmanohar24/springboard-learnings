@@ -1,0 +1,29 @@
+:root {
+    --primary: purple;
+    --secondary: lavender;
+}
+
+body {
+    margin: 0px;
+    padding: 20px;
+    font-family: serif;
+    background: var(--secondary)
+}
+
+* {
+    color: black;
+    margin: 0px;
+}
+
+p {
+    margin: 20px 0;
+}
+
+button {
+    border: 0;
+    padding: 8px;
+    border-radius: 4px;
+    color: white;
+    background: var(--primary);
+    cursor: pointer;
+}

@@ -1,0 +1,19 @@
+.Message {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid purple;
+    background-color: orange;
+    color: white;
+    height: 50px;
+    padding: 5px;
+    font-family: cursive;
+    font-size: large;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    border: none;
+    border-radius: 5px;
+}

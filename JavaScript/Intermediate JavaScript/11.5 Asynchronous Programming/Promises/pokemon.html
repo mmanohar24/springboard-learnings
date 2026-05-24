@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Pokemon API </title>
+        <link rel = "stylesheet" href = "pokemon_style.css">
+    </head>
+
+    <body id = "body">
+        <h1> Pokemon API </h1>
+
+        <div>
+            <button id="drawButton"> Catch Pokemon </button>
+            <button id="resetButton"> Reset </button>
+            <span id="status"> Loading Pokemon... </span>
+        </div>
+
+        <div id = "cards" aria-live = "polite"> </div>
+
+        <script>
+            const API = "https://pokeapi.co/api/v2";
+
+            const drawButton = document.getElementById("drawButton");
+            const resetButton = document.getElementById("resetButton");
+            const statusSpan = document.getElementById("status");
+            const cardsDiv = document.getElementById("cards");
+            
+            function renderCard( {name, img, description} )
+            {
+                const wrap = document.createElement("div");
+                wrap.className = "card";
+                wrap.innerHTML = ` <img src="${img}" alt="${name}">
+                <h3 class = "pokemon-name">${name} </h3>
+                <p class = "pokemon-description"> ${description} </p>
+                `;
+                cardsDiv.prepend(wrap);
+            }
+
+            async function catchPokemon()
+            {
+                drawButton.disabled = true;
+                statusSpan.textContent = "Catching Pokemon...";
+
+                try
+                {
+                    const randomId = Math.floor( Math.random() * 1010 ) + 1;
+
+                    const response = await fetch(`${API}/pokemon/${randomId}`);
+                    const data = await response.json();
+
+                    const pokemonName = data.name;
+                    const img =
+                        data.sprites?.other?.["official-artwork"]?.front_default ||
+                        data.sprites?.front_default ||
+                        "";
+
+                    const speciesResponse = await fetch(data.species.url);
+                    const speciesData = await speciesResponse.json();
+
+                    const textEntry = speciesData.flavor_text_entries.find(entry => entry.language.name === "en");
+                    const description = textEntry?.flavor_text ? textEntry.flavor_text.replace(/\n|\f/g, ' ') : "No description available.";
+
+
+                    renderCard( { name: pokemonName, img, description} );
+                    statusSpan.textContent = "Pokemon caught!";
+                }
+                catch(error)
+                {
+                    statusSpan.textContent = "Error catching Pokemon.";
+                    console.error("Error:", error);
+                }
+                finally
+                {
+                    drawButton.disabled = false;
+                }
+            }
+
+            function resetPage()
+            {
+                cardsDiv.innerHTML = "";
+                statusSpan.textContent = "Page reset. Ready to catch Pokemon!";
+            }
+
+            drawButton.addEventListener("click", catchPokemon);
+            resetButton.addEventListener("click", resetPage);
+
+            statusSpan.textContent = "Ready to catch Pokemon!";
+
+
+        </script>
+    </body>
+</html>

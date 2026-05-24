@@ -1,0 +1,12 @@
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+img {
+    flex-wrap: wrap;
+    padding: 20px;
+    width: auto;
+    height: 400px;
+}

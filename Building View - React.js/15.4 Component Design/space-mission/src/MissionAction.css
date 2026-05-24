@@ -1,0 +1,29 @@
+.MissionAction {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.MissionAction button {
+    /* background-color: transparent; */
+    text-align: center;
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 50px;
+}
+
+
+
+.MissionAction-launchButton {
+    background-color: red;
+}
+
+.MissionAction-completeButton {
+    background-color: green;
+}
