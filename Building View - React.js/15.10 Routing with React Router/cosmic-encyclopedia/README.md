@@ -1,16 +1,25 @@
-# React + Vite
+# Cosmic Encyclopedia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React app built to practice client side routing with React Router v6. The idea is simple: a space encyclopedia where users can browse different celestial objects, each on its own page, without a full browser reload.
 
-Currently, two official plugins are available:
+## What it does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+There is a navigation bar at the top with links to each celestial object. Clicking one takes you to a dedicated page with a description and an image pulled from Wikipedia. A back button lets you return to the previous page. If you navigate to an ID that does not exist in the dataset, it shows a not found message.
 
-## React Compiler
+## What I practiced
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The main point of this project was dynamic routing. Instead of building a separate page component for each celestial object, there is a single Content component that reads the ID from the URL using the useParams hook, finds the matching object in a dataset, and renders it. This means adding a new celestial object is as simple as adding one entry to the data file.
 
-## Expanding the ESLint configuration
+It also covers nested routes with a shared layout, NavLink with active state styling, and programmatic navigation using useNavigate for the back button.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Structure
+
+The app is organized into four folders inside src. Pages holds the Home component. Components holds the Content page and the BreadCrumbs back button. Layouts holds the RouteLayout that wraps every page with the nav and renders child routes through an Outlet. Data holds the celestial objects dataset.
+
+## Celestial objects included
+
+Mars, Venus, Orion Nebula, and Andromeda Galaxy.
+
+## Tech used
+
+React, React Router v6, and Vite.
