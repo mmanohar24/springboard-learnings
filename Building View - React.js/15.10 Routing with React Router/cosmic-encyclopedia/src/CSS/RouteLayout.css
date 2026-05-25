@@ -1,0 +1,33 @@
+.RouteLayout-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 15px 24px;
+    margin: 30px auto;
+    width: fit-content;
+    border: 2px solid purple;
+    border-radius: 16px;
+}
+
+.RouteLayout-nav a {
+    padding: 10px;
+    color: black;
+    border-radius: 4px;
+    text-decoration: none;
+    background: transparent;
+}
+
+.RouteLayout-nav a.active {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: purple;
+    text-align: center;
+}
+
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+}
