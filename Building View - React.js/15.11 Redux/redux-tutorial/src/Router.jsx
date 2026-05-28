@@ -1,23 +1,18 @@
 import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } from "react-router";
-
-// Pages
-import Home from "./Pages/Home";
-
-// Layouts
-import RouteLayout from "./Layouts/RouteLayout";
-import Content from "./Components/Content";
-
-
+import UserForm from "./UserForm";
+import Users from "./Pages/Users";
+import RouteLayout from "./RouteLayout";
+import PostList from "./features/posts/PostList";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-
         <Route path="/" element={<RouteLayout />}>
-            <Route index element={<Home />} />
-            <Route path="celestial/:id" element={<Content />} />
+            <Route index element={<UserForm />} />
+            <Route path="users" element={<Users />} />
+            <Route path="posts" element={<PostList />} />
         </Route>
     )
-);
+)
 
 function Router() {
     return (

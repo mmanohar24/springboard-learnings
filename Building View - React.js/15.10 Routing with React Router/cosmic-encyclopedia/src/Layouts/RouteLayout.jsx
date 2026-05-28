@@ -10,10 +10,10 @@ const RouteLayout = () => {
             <header>
                 <nav className="RouteLayout-nav">
                     <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}> Home </NavLink>
-                    <NavLink to="/mars" > Mars </NavLink>
-                    <NavLink to="/venus"> Venus </NavLink>
-                    <NavLink to="/orion-nebula"> Orion_Nebula </NavLink>
-                    <NavLink to="/andromeda-galaxy"> Andromeda_Galaxy </NavLink>
+                    <NavLink to="/celestial/mars" > Mars </NavLink>
+                    <NavLink to="/celestial/venus"> Venus </NavLink>
+                    <NavLink to="/celestial/orion-nebula"> Orion_Nebula </NavLink>
+                    <NavLink to="/celestial/andromeda-galaxy"> Andromeda_Galaxy </NavLink>
                 </nav>
 
                 <BreadCrumbs />

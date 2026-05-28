@@ -1,0 +1,13 @@
+.PostList-posts
+{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.PostList-posts article
+{
+    border: 2px solid purple;
+    border-radius: 6px;
+    padding: 16px;
+}

@@ -1,0 +1,16 @@
+.ReactionButtons {
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.ReactionButtons-btn
+{
+    padding: 4px;
+    width: 50px;
+    color: white;
+    background-color: purple;
+    border: none;
+    border-radius: 8px;
+}

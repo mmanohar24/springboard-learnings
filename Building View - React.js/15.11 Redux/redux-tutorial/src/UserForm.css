@@ -1,0 +1,21 @@
+.UserForm form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.UserForm input {
+    width: 500px;
+    padding: 12px;
+    border: 1px solid purple;
+    border-radius: 4px;
+}
+
+.UserForm-addUserbtn {
+    padding: 12px;
+    width: 500px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: purple;
+}

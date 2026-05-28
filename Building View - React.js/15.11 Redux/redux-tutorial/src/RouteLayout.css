@@ -1,0 +1,29 @@
+.routelayout-main
+{
+    padding-top: 40px;
+}
+
+.routeLayout header {
+    background-color: purple;
+    padding: 12px 24px;
+    border-radius: 6px;
+}
+
+.routeLayout nav {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+
+.routeLayout nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.routeLayout nav a:active {
+    background-color: white;
+    color: purple;
+}
