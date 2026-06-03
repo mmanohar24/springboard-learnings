@@ -1,0 +1,41 @@
+.Planets {
+    display: flex;
+    flex-direction: column;
+    gap: 16px
+}
+
+.Planets-container {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    border: 1px solid purple;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.Planets-imgWrapper {
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.Planets-img img {
+    display: block;
+    border: 1px solid #ddd;
+}
+
+.Planet-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.Planets-SpacecraftBtn {
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    background-color: purple;
+    cursor: pointer;
+}

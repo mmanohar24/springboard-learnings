@@ -9,10 +9,7 @@ const PostAuthor = ({ userId }) => {
 
     return (
         <span>
-            by
-            {
-                author ? author.name : ' Unknown author'
-            }
+            by {author ? author.name : ' Unknown author'}
         </span>
     )
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { addPost } from "./postSlice";
+import { addNewPost } from "./postSlice";
 import { selectAllUsers } from "../users/userSlice";
 
 import "../posts/PostForm.css"
@@ -11,7 +12,8 @@ const PostForm = () => {
     const INITIAL_STATE = {
         title: '',
         content: '',
-        userId: ''
+        userId: '',
+        addRequestStatus: 'idle'
     }
 
     const [formInput, setFormInput] = useState(INITIAL_STATE);
@@ -32,13 +34,33 @@ const PostForm = () => {
         )
     }
 
-    const addPosts = (event) => {
-        event.preventDefault();
-        dispatch(addPost({ ...formInput }))
-        setFormInput(INITIAL_STATE);
-    }
+    const canSave = [formInput.title, formInput.content, formInput.userId].every(Boolean) && formInput.addRequestStatus === 'idle';
 
-    const canSave = Boolean(formInput.title) && Boolean(formInput.content) && Boolean(formInput.userId)
+    const addPosts = (event) => {
+
+        event.preventDefault();
+        if (canSave) {
+            try {
+                setFormInput({ ...formInput, addRequestStatus: 'pending' });
+                dispatch(addNewPost({
+                    title: formInput.title,
+                    content: formInput.content,
+                    userId: formInput.userId
+                }))
+            }
+            catch (error) {
+                console.log('Failed to save the post', error)
+            }
+            finally {
+                setFormInput(INITIAL_STATE)
+            }
+        }
+        // if (formInput.title && formInput.content) {
+        //     event.preventDefault();
+        //     dispatch(addPost({ ...formInput }))
+        //     setFormInput(INITIAL_STATE);
+        // }
+    }
 
     const authors = users.map(user =>
     (

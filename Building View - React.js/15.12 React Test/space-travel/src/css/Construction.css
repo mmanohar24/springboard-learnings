@@ -1,0 +1,30 @@
+.Construction-backLink {
+    display: block;
+    padding-top: 16px;
+    margin-bottom: 16px;
+    color: blue;
+    text-decoration: none;
+}
+
+.Construction-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 16px;
+    box-sizing: border-box;
+}
+
+.Construction-form input {
+    padding: 12px;
+    border: 1px solid purple;
+    border-radius: 5px;
+}
+
+.Construction-formBtn {
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    background-color: purple;
+    cursor: pointer;
+}

@@ -1,0 +1,28 @@
+.LoginForm {
+    gap: 5px;
+    
+}
+
+.LoginForm-form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+    width: 300px;
+    box-sizing: border-box;
+}
+
+.LoginForm-form input {
+    padding: 12px;
+    border: 1px solid purple;
+    border-radius: 5px;
+}
+
+.LoginForm button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: purple;
+}

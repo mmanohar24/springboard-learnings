@@ -1,34 +1,41 @@
-import { useSelector } from "react-redux";
-import { selectsAllPosts } from "./postSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { selectsAllPosts, getPostsStatus, getPostsError, fetchPosts } from "./postSlice";
+import { useEffect } from "react";
 
+import PostsExcerpt from "./PostsExcerpt";
 import PostForm from "../posts/PostForm"
-import PostAuthor from "./PostAuthor";
-import TimeAgo from "./TimeAgo";
-import ReactionButtons from "./ReactionButtons";
-
 import "../posts/PostList.css"
 
 
 const PostList = () => {
 
+    const dispatch = useDispatch();
+
     const posts = useSelector(selectsAllPosts);
+    const postsStatus = useSelector(getPostsStatus);
+    const postsError = useSelector(getPostsError);
 
-    const orderedPost = posts.slice().sort((a, b) => b.date.localeCompare(a.date));
-
-    const renderedPosts = orderedPost.map(
-        post => (
-            <article key={post.id}>
-                <h3> {post.title} </h3>
-                <p> {post.content} </p>
-
-                <p className="PostList-postAuthorName">
-                    <PostAuthor userId={post.userId} />
-                    <TimeAgo timestamp={post.date} />
-                </p>
-                <ReactionButtons post={post} />
-            </article>
-        )
+    useEffect(
+        () => {
+            if (postsStatus === 'idle') {
+                dispatch(fetchPosts())
+            }
+        }, [postsStatus, dispatch]
     )
+
+    let content;
+    if (postsStatus === 'loading') {
+        content = <p> "Loading..." </p>
+    }
+    else if (postsStatus === 'succeeded') {
+        const orderedPosts = posts.slice().sort((a, b) => b.date.localeCompare(a.date))
+        content = orderedPosts.map(
+            post => <PostsExcerpt key={post.id} post={post} />
+        )
+    }
+    else if (postsStatus === 'failed') {
+        content = <p> {postsError} </p>
+    }
 
     return (
         <div className="PostList">
@@ -44,7 +51,7 @@ const PostList = () => {
 
                 <div className="PostList-posts">
                     {
-                        renderedPosts
+                        content
                     }
                 </div>
 

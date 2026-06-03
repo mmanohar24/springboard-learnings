@@ -1,0 +1,46 @@
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-display,
+.food-display {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid purple;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 15px;
+}
+
+button {
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.error-response
+{
+    background-color: red;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    padding: 10px;
+}
+
+button:active {
+    background-color: burlywood;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+.best-friend {
+    color: purple;
+    font-size: large;
+    font-weight: 400;
+}

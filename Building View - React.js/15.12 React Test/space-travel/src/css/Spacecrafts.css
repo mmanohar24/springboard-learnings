@@ -1,0 +1,42 @@
+.Spacecrafts-buildLink {
+    display: block;
+    margin-bottom: 16px;
+    color: blue;
+    text-decoration: none;
+}
+
+.Spacecrafts-card {
+    border: 1px solid lavender;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.Spacecraft-cardDescription {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.Spacecrafts-cardActions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.Spacecrafts-cardActionsLink {
+    color: purple;
+    text-decoration: none;
+}
+
+.Spacecrafts-cardActions button {
+    padding: 6px;
+    border: 1px solid red;
+    border-radius: 6px;
+    color: white;
+    background-color: red;
+    cursor: pointer;
+}

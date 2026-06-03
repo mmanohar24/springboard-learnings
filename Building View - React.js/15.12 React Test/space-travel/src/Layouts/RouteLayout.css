@@ -1,0 +1,15 @@
+.RouteLayout-links {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid purple;
+    border-radius: 6px;
+    justify-content: center;
+    cursor: pointer;
+    padding: 16px;
+    gap: 10px;
+}
+
+.RouteLayout-navlink {
+    color: purple;
+    text-decoration: none;
+}
