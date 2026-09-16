@@ -2541,3 +2541,52 @@ const spoonacularAPIKEY = "530bcb41d8084db295d11e9d77d79162";
 //     console.log(response);
 // }
 
+
+
+// Closures
+
+/**
+ * Closure is a features that allows inner function to access the outer scope of function.
+ * It helps in binding a function to its outer scope and is created automatically whenever a function
+ * is created.
+ * 
+ */
+
+function x() {
+    var a = 7;
+    function y() {
+        console.log(a);
+    }
+
+    a = 100;
+    return y;
+}
+
+var z = x();
+console.log(z);
+z(); //7
+
+// Function that returns a once function
+
+function createOnceFunction() {
+
+    // checking if the function is called
+    let hasCalled = false;
+
+    return function () {
+        // if it's not called yet, we're printing function called and changing the status of hasCalled = true
+        if (!hasCalled) {
+            console.log('Function called');
+            hasCalled = true;
+        }
+        else {
+            console.log('Function can only be called once...')
+        }
+    }
+}
+
+const callOnce = createOnceFunction();
+
+callOnce();
+
+callOnce();

@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "6a58bba52647f576099dad06"
+  },
+  "title": "The Way of Kings",
+  "author": "Brandon Sanderson",
+  "rating": 9,
+  "pages": 400,
+  "genres": [
+    "fantasy"
+  ],
+  "reviews": [
+    {
+      "name": "Mario",
+      "body": "Great book!"
+    },
+    {
+      "name": "Yoshi",
+      "body": "so so"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6a58bf42ea8b1b6c898ed8a6"
+  },
+  "title": "The Light Fantastic",
+  "author": "Terry Pratchett",
+  "pages": 350,
+  "genres": [
+    "fantasy",
+    "magic"
+  ],
+  "reviews": [
+    {
+      "name": "Luigi",
+      "body": "It was pretty good"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6a58bf42ea8b1b6c898ed8a7"
+  },
+  "title": "The Name of the Wind",
+  "author": "Patrick Rothfuss",
+  "pages": 250,
+  "genres": [
+    "fantasy"
+  ],
+  "reviews": [
+    {
+      "name": "peach",
+      "body": "It was okay"
+    }
+  ]
+}]
