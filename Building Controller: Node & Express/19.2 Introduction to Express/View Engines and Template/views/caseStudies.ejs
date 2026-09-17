@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+    <body>
+
+        <%- include('./partials/nav.ejs') %>
+
+            <div class="case-studies">
+                <h2> Case Studies </h2>
+
+                <h3> Our Ability: Redesigning job search dashboard </h3>
+                <p>
+                    Our Ability helps people with disabilities find work. When I joined, people using screen readers
+                    couldn't
+                    finish the
+                    profile form, job search had no filters, and text contrast failed accessibility minimums. I was the
+                    only
+                    designer. Over
+                    12 weeks I redesigned the candidate dashboard and the chatbot across four rounds, including one that
+                    failed
+                    testing and
+                    got thrown out.
+                </p>
+
+                <button> View Case Study </button>
+
+                <h3> OrangeWork Hub: replacing paper shift scheduling for Syracuse student workers </h3>
+                <p>
+                    A mobile app for scheduling, swapping, and dropping shifts, built for Syracuse student workers who
+                    were
+                    stuck using
+                    paper sign-ups and slow email. Solo project, 16 weeks. I lived this problem myself at Halal Shack
+                    before I
+                    designed it.
+                </p>
+
+                <button> View Case Study </button>
+
+                <% if(caseStudies.length> 0 )
+                    { %>
+                    <% caseStudies.forEach( caseStudy=>
+                        { %>
+                        <h3 class="title">
+                            <%= caseStudy.title %>
+                        </h3>
+                        <p class="body">
+                            <%= caseStudy.body %>
+                        </p>
+                        <% }) %>
+                            <% } else { %>
+                                <p> There are no case studies to display... </p>
+                                <% } %>
+            </div>
+
+            <%- include('./partials/footer.ejs') %>
+    </body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+    <body>
+
+        <%- include('../partials/nav.ejs') %>
+
+            <div class="case-studies">
+
+                <h2> Case Studies </h2>
+
+                <% if(caseStudies.length> 0 )
+                    { %>
+                    <% caseStudies.forEach( caseStudy=>
+                        { %>
+                        <a class="single" href="/case-studies/<%=caseStudy._id%>">
+                            <h3 class="title">
+                                <%= caseStudy.title %>
+                            </h3>
+                            <p class="snippet">
+                                <%= caseStudy.snippet %>
+                            </p>
+                        </a>
+
+                        <!-- <p class="description">
+                            <%= caseStudy.description %>
+                        </p> -->
+
+                        <% }) %>
+                            <% } else { %>
+                                <p> There are no case studies to display... </p>
+                                <% } %>
+            </div>
+
+            <%- include('../partials/footer.ejs') %>
+
+    </body>
+
+</html>

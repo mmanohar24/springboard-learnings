@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+    <body>
+
+        <%- include('../partials/nav.ejs') %>
+
+            <div class="add-caseStudy">
+
+                <form action="/case-studies" method="POST">
+                    <label for="title"> CaseStudy Title </label>
+                    <input type="text" id="title" name="title" required>
+
+                    <label for="snippet"> CaseStudy Snippet </label>
+                    <input type="text" id="snippet" name="snippet" required>
+
+                    <label for="description"> CaseStudy Description </label>
+                    <textarea id="description" name="description" required> </textarea>
+
+                    <button> Submit Case Study </button>
+
+                </form>
+
+            </div>
+
+            <%- include('../partials/footer.ejs') %>
+    </body>
+
+</html>
