@@ -1,0 +1,21 @@
+Meredith Grey - Female - 45 - Surgeon
+Derek Shepherd - Male - 50 - Neurosurgeon
+Mark Sloan - Male - 48 - Plastic Surgeon
+Cristina Yang - Female - 40 - Cardiothoracic Surgeon
+Izzie Stevens - Female - 38 - Surgical Oncologist
+George O'Malley - Male - 39 - General Surgeon
+Alex Karev - Male - 42 - Pediatric Surgeon
+Miranda Bailey
+Richard Webber
+Callie Torres
+Arizona Robbins
+Owen Hunt
+Teddy Altman
+April Kepner
+Jackson Avery
+Amelia Shepherd
+
+Manoj
+Cibi
+Bruce Wayne
+Peter Parker
